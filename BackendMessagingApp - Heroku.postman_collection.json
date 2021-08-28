@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "6eec51a5-cd7f-40e6-983f-cd70c77d77ee",
+		"name": "BackendMessagingApp - Heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User - Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Transfer-Encoding",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Candice\",\r\n    \"password\": \"Candice\",\r\n    \"email\": \"Candice@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/user/register/",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token d95cd8b86755b40e5b72d58dd725c83a1f5c7658aa6d35d166d4c7eb8392fefc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Candice\",\r\n    \"password\": \"Candice\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/user/login/",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 4771277a518e1c0b5f6ed0f749fb2e7716fc721f053a8b502fab3f33321ea023",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"4771277a518e1c0b5f6ed0f749fb2e7716fc721f053a8b502fab3f33321ea023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/logout/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Delete All Users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/deleteall/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"deleteall",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e399c7a024e67950d5dfefded526efb8f130753593188d1367ebea6a03ab0b78",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"Alice123\",\r\n    \"receiver\": \"Candice\",\r\n    \"subject\": \"Testing the messaing api\",\r\n    \"message\": \"Hey! we're testing the new messaging api - Did you get this message?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/message/send/",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Show All Unread",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8b90d7500cf5beb662742201aeaf587c513736d24815ab1a46e0372e1744aaa0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/message/showallunread/",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"showallunread",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Show All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 7624107f3385d696e104269a04dca9dcb61b4ae494fa0153450be67d096bf4dd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/message/showall/",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"showall",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Read Message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 7624107f3385d696e104269a04dca9dcb61b4ae494fa0153450be67d096bf4dd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message_id\": \"cb3a706a-b7a8-4bc7-8e9c-48079d6673b4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/message/read/",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"read",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8b90d7500cf5beb662742201aeaf587c513736d24815ab1a46e0372e1744aaa0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message_id\": \"40ebf22b-6f64-45a5-bffd-29f3b4ef12e4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/message/delete/",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Messages - Delete All",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8b90d7500cf5beb662742201aeaf587c513736d24815ab1a46e0372e1744aaa0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "backend-messaging-app.herokuapp.com/message/deleteall",
+					"host": [
+						"backend-messaging-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"message",
+						"deleteall"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
