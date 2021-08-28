@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=972$p@f)jt7$vz_dbue#az5-3i)m2i4j#1f&(@yx6-)=qw+7z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',
                  'backend-messaging-app.herokuapp.com']
