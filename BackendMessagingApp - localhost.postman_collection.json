@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "661c3f6c-f933-4505-8abb-77a6574d9ebd",
+		"name": "BackendMessagingApp - localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User - Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Transfer-Encoding",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Voldemort\",\r\n    \"password\": \"Voldemort\",\r\n    \"email\": \"Voldemort@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/register/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token d95cd8b86755b40e5b72d58dd725c83a1f5c7658aa6d35d166d4c7eb8392fefc",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"su_admin\",\r\n    \"password\": \"Ari357lp\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/login/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 4771277a518e1c0b5f6ed0f749fb2e7716fc721f053a8b502fab3f33321ea023",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"4771277a518e1c0b5f6ed0f749fb2e7716fc721f053a8b502fab3f33321ea023\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/user/logout/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Delete All Users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/user/deleteall/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"deleteall",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 54926ce94dc1158639db59b38e084fa711f0861d515226e100cefd7c8b7c7a93",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message_id\": 1,\r\n    \"sender\": \"Yelena\",\r\n    \"receiver\": \"Voldemort\",\r\n    \"subject\": \"RE:RE Shipping Request\",\r\n    \"message\": \"We're out of stock unfortunatly, please try again next week\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/message/send/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"message",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Show All Unread",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token fd0668bc341a06c1d42ee887439608e00db8e0cadc43fbc137c06f1dfbc48e14",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sender\": \"Nate\",\r\n    \"receiver\": \"d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/message/showallunread/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"message",
+						"showallunread",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Show All",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token fd0668bc341a06c1d42ee887439608e00db8e0cadc43fbc137c06f1dfbc48e14",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message_id\": 1,\r\n    \"sender\": \"Joel\",\r\n    \"receiver\": \"Nate\",\r\n    \"subject\": \"Tools\",\r\n    \"message\": \"badly formed uuid\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/message/showall/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"message",
+						"showall",
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Read Message",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token fd0668bc341a06c1d42ee887439608e00db8e0cadc43fbc137c06f1dfbc48e14",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message_id\": \"f2cd2877-7b5a-4af1-862e-dfa066b480a6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/message/read/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"message",
+						"read",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Message - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8b90d7500cf5beb662742201aeaf587c513736d24815ab1a46e0372e1744aaa0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message_id\": \"40ebf22b-6f64-45a5-bffd-29f3b4ef12e4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/message/delete/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"message",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Messages - Delete All",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 8b90d7500cf5beb662742201aeaf587c513736d24815ab1a46e0372e1744aaa0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/message/deleteall",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"message",
+						"deleteall"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
